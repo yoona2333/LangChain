@@ -10,11 +10,17 @@ messages=[
     SystemMessage(content="你是一个专业的英语翻译"),
     HumanMessage(content="把你好不好翻译成英文")
 ]
+messagesss=[
+    # SystemMessage(content="你是一个专业的英语翻译"),
+    # HumanMessage(content="把你好不好翻译成英文")
+    ("system","你是一个专业的英语翻译"),
+    ("human","把你行不行翻译成英文")
+]
 
 # stream返回迭代器，要用for循环遍历chunk
 # for chunk in model.stream([HumanMessage("deepseek怎么样？")]):
       # print(chunk.content, end="", flush=True)
-res=model.invoke(input=messages)
-print(res)
+res=model.invoke(input=messagesss)
+# print(res)
 print('-----------------')
 print(res.content)
