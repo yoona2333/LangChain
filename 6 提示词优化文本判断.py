@@ -1,5 +1,7 @@
 from openai import OpenAI
 
+from testAPI import response
+
 client = OpenAI(
     # base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
     api_key="qwen3-vl:4b",
@@ -42,6 +44,26 @@ messages = [
     {"role": "system",
      "content": f"你帮我完成文本匹配，我给你2个句子，被[]包围，你判断它们是否匹配，回答是或不是，请参考如下示例："},
 ]
+
+# for key ,value in examples_data.items():
+#     for t in value:
+#         messages.append(
+#             {"role":"user","content":f"句子1：[{t[0]}]，句子2：[{t[1]}]"}
+#         ),
+#         messages.append(
+#             {"role": "assistant", "content": key}
+#     )
+#
+# for q in questions:
+#     response=client.chat.completions.create(
+#         model="qwen3-vl:4b",
+#         messages=messages+[
+#             {"role": "user", "content": f"句子1：[{q[0]}]，句子2：[{q[1]}]"},
+#         ]
+#     )
+#     print(response.choices[0].message.content)
+
+
 
 for key, value in examples_data.items():
     for t in value:
