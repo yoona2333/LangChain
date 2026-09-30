@@ -15,6 +15,6 @@ prompt = PromptTemplate.from_template(
 
 chain = prompt | model | parser | model | parser
 
-res: str = chain.invoke({"lastname": "张", "gender": "女儿"})
+res: str = chain.invoke({"lastname": "张", "gender": "女儿"}) # 执行链 ，返回字符串
 print(res)
 print(type(res))
