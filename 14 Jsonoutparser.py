@@ -27,6 +27,8 @@ second_prompt = PromptTemplate.from_template(
 # 构建链   （AIMessage("{name: 张若曦}")
 chain = first_prompt | model | json_parser | second_prompt | model | str_parser
 
+print(type(chain))
+
 for chunk in chain.stream({"lastname": "张", "gender": "女儿"}):
     print(chunk, end="", flush=True)
 
