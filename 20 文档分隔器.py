@@ -11,7 +11,7 @@ splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,         # 分段的最大字符数
     chunk_overlap=50,       # 分段之间允许重叠字符数
     # 文本自然段落分隔的依据符号
-    separators=["\n\n", "\n", "。", "！", "？", ".", "!", "?", " ", ""],
+    separators=["\n\n", "\n", "。", "！", "？", ".", "!", "?", "  ", ""],
     length_function=len,    # 统计字符的依据函数
 )
 
