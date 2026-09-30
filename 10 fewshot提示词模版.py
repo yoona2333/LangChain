@@ -24,7 +24,9 @@ few_shot_template=FewShotPromptTemplate(
     input_variables=["input_word"],           # 提示词中使用的输入变量
 )
 
-prompt_text=few_shot_template.invoke({"input_word":"高"}).to_string()
+
+
+prompt_text=few_shot_template.invoke(input={"input_word":"高"}).to_string()
 print(prompt_text)
 
 model=ChatOllama(
