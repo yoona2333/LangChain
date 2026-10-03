@@ -48,6 +48,8 @@ def format_func(docs: list[Document]):
 
     return formatted_str
 
+
+
 # chain
 chain = (
     {"input": RunnablePassthrough(), "context": retriever | format_func} | prompt | print_prompt | model | StrOutputParser()
