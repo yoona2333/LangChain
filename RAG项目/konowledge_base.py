@@ -19,10 +19,10 @@ def check_md5(md5_str: str):
     """
     if not os.path.exists(config.md5_path):
         # if进入表示文件不存在，那肯定没有处理过这个md5了
-        open(config.md5_path, 'w', encoding='utf-8').close()
+        open(config.md5_path, 'w', encoding='utf-8').close() # 创建文件 并关闭
         return False
     else:
-        for line in open(config.md5_path, 'r', encoding='utf-8').readlines():
+        for line in open(config.md5_path, 'r', encoding='utf-8').readlines(): # 读取文件所有行
             line = line.strip()     # 处理字符串前后的空格和回车
             if line == md5_str:
                 return True         # 已处理过
@@ -32,8 +32,8 @@ def check_md5(md5_str: str):
 
 def save_md5(md5_str: str):
     """将传入的md5字符串，记录到文件内保存"""
-    with open(config.md5_path, 'a', encoding="utf-8") as f:
-        f.write(md5_str + '\n')
+    with open(config.md5_path, 'a', encoding="utf-8") as f: # 打开文件，追加模式 ，编码utf-8
+        f.write(md5_str + '\n')  # 追加写入文件，每个md5字符串占一行
 
 
 def get_string_md5(input_str: str, encoding='utf-8'):
