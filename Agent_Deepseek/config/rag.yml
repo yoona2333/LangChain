@@ -1,0 +1,7 @@
+chat_model_name: deepseek-chat
+chat_api_key: ""            # DeepSeek API Key，留空则读取环境变量 DEEPSEEK_API_KEY
+chat_api_base: https://api.deepseek.com
+
+embedding_model_name: BAAI/bge-m3
+embedding_api_key: ""       # SiliconFlow API Key，留空则读取环境变量 SILICONFLOW_API_KEY
+embedding_api_base: https://api.siliconflow.cn/v1
